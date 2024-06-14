@@ -10,3 +10,4 @@ The goal is to create a lakehouse platform using Docker That will have following
 - SparkMeasure: Healthcheck and Monitoring
 - Unit Test, Integration Test, Documentation Generator, Test Coverage
 - CICD
+- MLFlow: Machine Learning evaluation, retraining and deployment pipeline

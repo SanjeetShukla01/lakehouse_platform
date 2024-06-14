@@ -8,3 +8,5 @@ The goal is to create a lakehouse platform using Docker That will have following
 - Apache Arrow data Format
 - Kubernetes
 - SparkMeasure: Healthcheck and Monitoring
+- Unit Test, Integration Test, Documentation Generator, Test Coverage
+- CICD

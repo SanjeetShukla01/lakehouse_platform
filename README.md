@@ -7,3 +7,4 @@ The goal is to create a lakehouse platform using Docker That will have following
 - Airflow dags with Xcom, Dynamic Dags and other latest features.
 - Apache Arrow data Format
 - Kubernetes
+- SparkMeasure: Healthcheck and Monitoring

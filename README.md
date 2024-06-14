@@ -12,3 +12,4 @@ The goal is to create a lakehouse platform using Docker That will have following
 - CICD
 - MLFlow: Machine Learning evaluation, retraining and deployment pipeline
 - SQL pipeline, python sql runner
+- SparkML, SparkStreaming, Kafka, Graph Processing. 

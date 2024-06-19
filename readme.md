@@ -1,10 +1,23 @@
 ### To build the image using docker build command
+```bash
+docker build -t spark3-5-1n .
+```
+Or for more verbose build
+```bash
+docker build -t spark3-5-1n . --progress=plain
+```
+
+
+
+### To run the container from image built in above step. 
+```bash
 hostfolder="$(pwd)/app"  
 dockerfolder="/opt/spark/work-dir/app"
 docker run --rm -it \
   -p 4040:4040 -p 4041:4041 \
   -v ${hostfolder}:${dockerfolder} \
 spark3-5-1n:latest
+```
 
 In above command 
 --rm means that remove the container if it exists.

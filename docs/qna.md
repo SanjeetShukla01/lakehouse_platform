@@ -20,3 +20,5 @@ Dockerfile:1
 --------------------
 ERROR: failed to solve: eclipse-temurin:17-jre-jammy: failed to resolve source metadata for docker.io/library/eclipse-temurin:17-jre-jammy: error getting credentials - err: exec: "docker-credential-desktop": executable file not found in $PATH, out: ``
 ```
+
+Solution: https://stackoverflow.com/questions/65896681/exec-docker-credential-desktop-exe-executable-file-not-found-in-path

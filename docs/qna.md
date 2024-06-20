@@ -22,3 +22,13 @@ ERROR: failed to solve: eclipse-temurin:17-jre-jammy: failed to resolve source m
 ```
 
 Solution: https://stackoverflow.com/questions/65896681/exec-docker-credential-desktop-exe-executable-file-not-found-in-path
+
+
+## Error while running docker run command
+
+Error: docker: Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: exec: "/opt/entrypoint.sh": permission denied: unknown.`docker run --rm -it   -p 4040:4040 -p 4041:4041   -v ${hostfolder}:${dockerfolder} spark3-5-1n:latest`
+
+Solution:
+
+
+## What is base image eclipse-temurin:17-jre-jammy? What is it based on?

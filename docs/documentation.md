@@ -153,4 +153,52 @@ Default: If the command is neither driver nor executor, it executes the provided
 
 
 
+## What is the functions on starup.sh?
+The startup.sh script is designed to set up the environment and start a JupyterLab server that is configured to work with PySpark and Delta Lake. Here's a breakdown of its components:
+
+Sourcing the Rust Environment:
+
+```bash
+source "$HOME/.cargo/env"
+This command sources the Rust environment setup script. This is typically needed if Rust tools or applications are used within the container.
+```
+Setting Up PySpark Driver for JupyterLab:
+
+```bash
+export PYSPARK_DRIVER_PYTHON=jupyter
+export PYSPARK_DRIVER_PYTHON_OPTS='lab --ip=0.0.0.0'
+```
+These environment variables configure PySpark to use Jupyter as its driver, and specify options for JupyterLab to bind to all IP addresses (--ip=0.0.0.0).
+
+Setting Up Delta Lake Versions:
+
+```bash
+export DELTA_SPARK_VERSION='3.1.0'
+export DELTA_PACKAGE_VERSION=delta-spark_2.12:${DELTA_SPARK_VERSION}
+```
+These variables define the versions of Delta Lake packages to be used with Spark.
+
+Starting PySpark with Delta Lake:
+
+```bash
+$SPARK_HOME/bin/pyspark --packages io.delta:${DELTA_PACKAGE_VERSION} \
+  --conf "spark.driver.extraJavaOptions=-Divy.cache.dir=/tmp -Divy.home=/tmp -Dio.netty.tryReflectionSetAccessible=true" \
+  --conf "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension" \
+  --conf "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog"
+```
+
+This command starts a PySpark shell with the specified Delta Lake package and several Spark configurations:
+
+--packages io.delta:${DELTA_PACKAGE_VERSION}: Specifies the Delta Lake package to be used.
+--conf "spark.driver.extraJavaOptions=-Divy.cache.dir=/tmp -Divy.home=/tmp -Dio.netty.tryReflectionSetAccessible=true": Configures extra Java options for the Spark driver.
+--conf "spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension": Adds Delta Lake extensions to Spark SQL.
+--conf "spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog": Configures the Spark catalog to use Delta Lake.
+
+In summary, the startup.sh script sets up the environment for using JupyterLab with PySpark and Delta Lake, and then starts a PySpark shell with the appropriate configurations.
+
+
+
+
+
+
 

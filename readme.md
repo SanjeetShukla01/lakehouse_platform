@@ -6,7 +6,16 @@ Or for more verbose build
 ```bash
 docker build -t spark3-5-1n . --progress=plain
 ```
+With given dockerfile
+```bash
+docker build -t spark-delta:latest -f Dockerfile .
+```
 
+### To inspect image for any issue:
+`docker inspect spark3-5-1n:latest`
+
+
+`docker run -it spark3-5-1n:latest /opt/spark/bin/spark-shell`
 
 
 ### To run the container from image built in above step. 

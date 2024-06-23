@@ -13,3 +13,7 @@ The goal is to create a lakehouse platform using Docker That will have following
 - MLFlow: Machine Learning evaluation, retraining and deployment pipeline
 - SQL pipeline, python sql runner
 - SparkML, SparkStreaming, Kafka, Graph Processing. 
+
+
+https://medium.com/@mucagriaktas/end-to-end-data-engineer-data-lake-project-scala-spark-3-5-1-150246b65d1f
+

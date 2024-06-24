@@ -17,3 +17,4 @@ The goal is to create a lakehouse platform using Docker That will have following
 
 https://medium.com/@mucagriaktas/end-to-end-data-engineer-data-lake-project-scala-spark-3-5-1-150246b65d1f
 
+https://github.com/unitycatalog/unitycatalog/blob/main/docs/tutorial.md

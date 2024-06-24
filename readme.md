@@ -17,6 +17,11 @@ docker build -t spark-delta:latest -f Dockerfile .
 
 `docker run -it spark3-5-1n:latest /opt/spark/bin/spark-shell`
 
+`docker run -d spark3-5-1n:latest tail -f /dev/null`
+` docker exec -it 649f88bd0e30 bash`
+`/opt/spark/bin/spark-shell`
+
+
 
 ### To run the container from image built in above step. 
 ```bash
